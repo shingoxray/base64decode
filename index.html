@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Base64 Decode | Base64 解码</title>
+	<style>
+		h1 { text-align: center; }
+		table { width: 100%; }
+			th { width: 50%; }
+			td { padding: 0.5em; }
+		textarea { min-height: 20em; width: 100%; }
+	</style>
+</head>
+<body>
+	<h1>Base64 Decode | Base64 解码</h1>
+	<table>
+		<tr>
+			<th>密文</th>
+			<th>明文</th>
+		</tr>
+		<tr>
+			<td><textarea id="encodedText" name="encodedText" oninput="base64decode()"></textarea></td>
+			<td><textarea id="decodedText" name="decodedText"></textarea></td>
+		</tr>
+	</table>
+	<script>
+		function base64decode() {
+			var encodedText = window.document.getElementById('encodedText').value
+			var decodedText = window.atob(encodedText)
+			window.document.getElementById('decodedText').value = decodedText
+		}
+	</script>
+</body>
+</html>
